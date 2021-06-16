@@ -123,6 +123,51 @@ same as mobile detection
 ![Screenshot (352)](https://user-images.githubusercontent.com/77377586/122279696-f78e0d00-cf05-11eb-8eda-e403ba9906a4.png)
 
 
+## E-mail/buzzer :
+when our model identifies any cheating activity then the screenshort of that activity will be sent to the invigilator's e-mail address.
+this process is done by smtp(simple mail transfer protocal) library. 
+### Code :
+![Screenshot (353)](https://user-images.githubusercontent.com/77377586/122280932-5738e800-cf07-11eb-857f-1bdc76447237.png)
+
+# Decision :
+As we know to check all these activites at a same time we need to import all the modules in 1 module so we create a main file and this main file will operates all the programms at a same time.
+## main.py file :
+we import all the sub modules in the main.py file 
+this is our final decision taker.
+This file takes following decisions if any detection takes place
+### If hand sign detected in camera
+#### Decision :Warning !! Hand activity
+
+![Screenshot 6_14_2021 7_56_22 PM](https://user-images.githubusercontent.com/77377586/122283392-1e4e4280-cf0a-11eb-83a1-c53af516942d.png)
+
+### If mobile detected in camera : 
+#### Decision :Warning !! Cell phone Detected
+
+![Screenshot 6_14_2021 7_56_38 PM](https://user-images.githubusercontent.com/77377586/122283469-33c36c80-cf0a-11eb-82e8-c6c1c3a0cf40.png)
+
+### If Face not detected in camera :
+#### Decision :Warning !! face not detected
+
+![Screenshot 6_14_2021 7_57_01 PM](https://user-images.githubusercontent.com/77377586/122283638-62d9de00-cf0a-11eb-97d3-79c68886b044.png)
+
+### If face is at the centre :
+#### Decision : Looking at the centre
+
+![Frame 6_14_2021 7_55_47 PM](https://user-images.githubusercontent.com/77377586/122283731-7ab16200-cf0a-11eb-8c13-ea53aa6d43c1.png)
+
+### if hand detected and face not detected 
+#### Decision :Warning !! Unusual activity!
+
+![Frame 6_17_2021 1_26_16 AM](https://user-images.githubusercontent.com/77377586/122284628-6883f380-cf0b-11eb-8bd2-09f5130eaf0c.png)
+
+### If hand detected face not detected and mobile detected 
+#### decision :Warning !! 100 % cheating activity .
+
+![Screenshot 6_14_2021 7_57_33 PM](https://user-images.githubusercontent.com/77377586/122284750-86515880-cf0b-11eb-8361-4170e7aa3c62.png)
+
+
+
+
 
 
 
