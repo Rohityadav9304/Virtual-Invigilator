@@ -35,8 +35,6 @@ and the text will be shown on screen i.e Warning !! Hand acivity deteced
 ### Techincal part of hand detection
 OpenCv plays main role in hand detection 
 #### Importing Libraries
-cv2: opencv [pip install opencv]
-numpy: for handling arrays as well as for math [pip install numpy]
 #### Reading Image
 #### SkinMask
 
