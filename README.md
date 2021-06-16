@@ -50,14 +50,16 @@ thresh : applying threshing.
 #### Convexity Defects
 Any deviation of the object from this hull can be considered as convexity defect.
 #### Cosine Theorem
-![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122272863-75e6b100-cefe-11eb-86a9-4ad4ff874197.png)
+
+![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122288810-a08d3580-cf0f-11eb-8572-f68243cb63f8.png)
+
 ![Screenshot (340)](https://user-images.githubusercontent.com/77377586/122272888-797a3800-cefe-11eb-86e8-f1ec79284afe.png)
 
 
 a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can say: If gamma is less than 90 degree or pi/2 we consider it as a finger.
+#### Counting fingers
 
-![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122272925-8139dc80-cefe-11eb-8f41-923a71297057.png)
-
+![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122288433-750a4b00-cf0f-11eb-913e-41adb719f8fe.png)
 
 #### Code 
 ![Screenshot (345)](https://user-images.githubusercontent.com/77377586/122272206-ee993d80-cefd-11eb-99c7-6dd5328a7955.png)
