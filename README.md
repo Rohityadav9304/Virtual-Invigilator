@@ -59,6 +59,29 @@ a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can 
 ![Screenshot (346)](https://user-images.githubusercontent.com/77377586/122272232-f822a580-cefd-11eb-802a-d7c9b923e1d0.png)
 
 
+## Mobile Detection
+Moblie detection Checks the gesture of the student’s activity ,and if any Cell phone activity is found then it gives Mobile detection output TRUE.
+And if any cheating activity is no detected then it give output FALSE.
+Tensorflow and CNN is used for Mobile detection 
+WORKING :
+Framewise video capturing takes place with 1second delay ,each video frame is classified after mathching with pretrained data .
+So after classification when program observes Mobile detection data then it gives Hand detection output :TRUE
+Otherwise it give FALSE output
+And a text will be shown on screen i.e Warning !!! Mobile detetected
+
+![Screenshot 6_14_2021 7_56_38 PM](https://user-images.githubusercontent.com/77377586/122273406-0b824080-ceff-11eb-8829-2b99e0d122ec.png)
+### techincal details 
+#### dataset :
+A pre trained dataset has been used that has 80 clasess of object detection 
+name of the dataset is COCO-dataset 
+we don't need to train and test the data for object detection we just need to call the mobile detection function and if the mobile is shown in screen than it will be automatically detected 
+
+#### tensorflow
+It is an open source artificial intelligence library, using data flow graphs to build models. It allows developers to create large-scale neural networks with many layers. TensorFlow is mainly used for: Classification, Perception, Understanding, Discovering, Prediction and Creation.
+#### CNN
+CNNs are used for image classification and recognition because of its high accuracy. ... The CNN follows a hierarchical model which works on building a network, like a funnel, and finally gives out a fully-connected layer where all the neurons are connected to each other and the output is processed
+
+
 
 
 
