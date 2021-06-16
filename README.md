@@ -45,14 +45,14 @@ Any deviation of the object from this hull can be considered as convexity defect
 hull = cv.convexHull(contours, returnPoints=False)
 defects = cv.convexityDefects(contours, hull)
 #### Cosine Theorem
-
-![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122270906-70886700-cefc-11eb-81e7-550ddfd7aef4.png)
-![Screenshot (340)](https://user-images.githubusercontent.com/77377586/122270924-78480b80-cefc-11eb-9e11-b6d0efd2d7bb.png)
+![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122272863-75e6b100-cefe-11eb-86a9-4ad4ff874197.png)
+![Screenshot (340)](https://user-images.githubusercontent.com/77377586/122272888-797a3800-cefe-11eb-86e8-f1ec79284afe.png)
 
 
 a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can say: If gamma is less than 90 degree or pi/2 we consider it as a finger.
 
-![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122271387-f99f9e00-cefc-11eb-8a26-4567e4d6bbbd.png)
+![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122272925-8139dc80-cefe-11eb-8f41-923a71297057.png)
+
 
 #### Code 
 ![Screenshot (345)](https://user-images.githubusercontent.com/77377586/122272206-ee993d80-cefd-11eb-99c7-6dd5328a7955.png)
