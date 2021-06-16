@@ -1,6 +1,6 @@
 # Virtual-Invigilator
 this project is based on cheating detection
-# About project
+# About project :
 This project detects cheating in examination using hardware (camera, computer system, sound system) and software (machine learning and deep learning).
 When system observes cheating activity then a buzzer will play or photo of suspect will be sent to email address of teachers. 
 ## The model contains following steps in detecting cheating
@@ -10,6 +10,15 @@ Head pose estimation
 Multiple person detection
 Email Sending
 Decision
+# Flow digram :
+
+![flow digram](https://user-images.githubusercontent.com/77377586/122285700-acc3c380-cf0c-11eb-9c23-64a231acefdc.png)
+
+# Block digram :
+![blog digram](https://user-images.githubusercontent.com/77377586/122286309-560ab980-cf0d-11eb-85bc-8210c0312d38.jpg)
+
+
+
 ## Hand detection.
 Suppose a student is giving sign to another student using his hand which can help another student in cheating so to detect this type of activity we trained a model that can detect hand activity 
 Hand detection Checks the gesture of the student’s hand ,and if any cheating activity is found then it gives Hand detection output TRUE.
@@ -134,8 +143,12 @@ As we know to check all these activites at a same time we need to import all the
 ## main.py file :
 we import all the sub modules in the main.py file 
 this is our final decision taker.
-This file takes following decisions if any detection takes place
-### If hand sign detected in camera
+## Flow chart
+
+![flow chart](https://user-images.githubusercontent.com/77377586/122286056-15ab3b80-cf0d-11eb-9fa2-e0c78d9944d3.jpg)
+
+## main.py file takes following decisions if any detection takes place
+### If hand sign detected in camera :
 #### Decision :Warning !! Hand activity
 
 ![Screenshot 6_14_2021 7_56_22 PM](https://user-images.githubusercontent.com/77377586/122283392-1e4e4280-cf0a-11eb-83a1-c53af516942d.png)
@@ -155,16 +168,20 @@ This file takes following decisions if any detection takes place
 
 ![Frame 6_14_2021 7_55_47 PM](https://user-images.githubusercontent.com/77377586/122283731-7ab16200-cf0a-11eb-8c13-ea53aa6d43c1.png)
 
-### if hand detected and face not detected 
+### if hand detected and face not detected :
 #### Decision :Warning !! Unusual activity!
 
 ![Frame 6_17_2021 1_26_16 AM](https://user-images.githubusercontent.com/77377586/122284628-6883f380-cf0b-11eb-8bd2-09f5130eaf0c.png)
 
-### If hand detected face not detected and mobile detected 
+### If hand detected face not detected and mobile detected :
 #### decision :Warning !! 100 % cheating activity .
 
 ![Screenshot 6_14_2021 7_57_33 PM](https://user-images.githubusercontent.com/77377586/122284750-86515880-cf0b-11eb-8361-4170e7aa3c62.png)
 
+### If multiple person detected on camera :
+#### Decision : More than one person 
+
+![Screenshot (227)](https://user-images.githubusercontent.com/77377586/122285297-29a26d80-cf0c-11eb-8b2a-97d1637d5c87.png)
 
 
 
