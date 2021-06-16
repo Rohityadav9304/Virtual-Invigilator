@@ -29,9 +29,6 @@ OpenCv plays main role in hand detection
 cv2: opencv [pip install opencv]
 numpy: for handling arrays as well as for math [pip install numpy]
 #### Reading Image
-img_path = "data/palm.jpg"
-img = cv.imread(img_path)
-cv.imshow('palm image',img)
 #### SkinMask
 
 It is used for highlighting specific color on image.
@@ -41,25 +38,8 @@ upper : upper range of skin color in HSV.
 skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
 blurred: bluring image to improve masking.
 thresh : applying threshing.
-
-hsvim = cv.cvtColor(img, cv.COLOR_BGR2HSV)
-lower = np.array([0, 48, 80], dtype = "uint8")
-upper = np.array([20, 255, 255], dtype = "uint8")
-skinRegionHSV = cv.inRange(hsvim, lower, upper)
-blurred = cv.blur(skinRegionHSV, (2,2))
-ret,thresh = cv.threshold(blurred,0,255,cv.THRESH_BINARY)
-cv.imshow("thresh", thresh)
-
 #### Contours
-contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
-contours = max(contours, key=lambda x: cv.contourArea(x))
-cv.drawContours(img, [contours], -1, (255,255,0), 2)
-cv.imshow("contours", img
-
 #### Convex Hull
-hull = cv.convexHull(contours)
-cv.drawContours(img, [hull], -1, (0, 255, 255), 2)
-cv.imshow("hull", img)
 #### Convexity Defects
 Any deviation of the object from this hull can be considered as convexity defect.
 hull = cv.convexHull(contours, returnPoints=False)
@@ -73,7 +53,11 @@ defects = cv.convexityDefects(contours, hull)
 a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can say: If gamma is less than 90 degree or pi/2 we consider it as a finger.
 
 ![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122271387-f99f9e00-cefc-11eb-8a26-4567e4d6bbbd.png)
-![Screenshot (342)](https://user-images.githubusercontent.com/77377586/122271419-03290600-cefd-11eb-97ad-2a93e816e931.png)
+
+#### Code 
+![Screenshot (345)](https://user-images.githubusercontent.com/77377586/122272206-ee993d80-cefd-11eb-99c7-6dd5328a7955.png)
+![Screenshot (346)](https://user-images.githubusercontent.com/77377586/122272232-f822a580-cefd-11eb-802a-d7c9b923e1d0.png)
+
 
 
 
