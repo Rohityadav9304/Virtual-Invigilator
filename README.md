@@ -23,9 +23,7 @@ and the text will be shown on screen i.e Warning !! Hand acivity deteced
 ![Screenshot 6_14_2021 7_56_22 PM](https://user-images.githubusercontent.com/77377586/122266084-0b7e4280-cef7-11eb-8042-021d21509e90.png)
 ### Techincal part of hand detection
 OpenCv plays main role in hand detection 
-'''
 '''python
-<strong>
 
 import numpy as np
 import cv2 as cv
@@ -81,8 +79,8 @@ def handDetection(img):
         return handResult    
     except:
         pass
-  </strong>
-  '''
+
+'''
 
 
 
