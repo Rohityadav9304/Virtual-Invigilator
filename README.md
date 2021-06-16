@@ -20,67 +20,66 @@ Framewise video capturing takes place with 1second delay ,each video frame is cl
 So after classification when program observes hand detection data then it gives Hand detection output :TRUE
 Otherwise it give FALSE output
 and the text will be shown on screen i.e Warning !! Hand acivity deteced
+
 ![Screenshot 6_14_2021 7_56_22 PM](https://user-images.githubusercontent.com/77377586/122266084-0b7e4280-cef7-11eb-8042-021d21509e90.png)
+
 ### Techincal part of hand detection
 OpenCv plays main role in hand detection 
-'''python
+#### Importing Libraries
+cv2: opencv [pip install opencv]
+numpy: for handling arrays as well as for math [pip install numpy]
+#### Reading Image
+img_path = "data/palm.jpg"
+img = cv.imread(img_path)
+cv.imshow('palm image',img)
+#### SkinMask
 
-import numpy as np
-import cv2 as cv
+It is used for highlighting specific color on image.
+hsvim : Change BGR (blue, green, red) image to HSV (hue, saturation, value).
+lower : lower range of skin color in HSV.
+upper : upper range of skin color in HSV.
+skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
+blurred: bluring image to improve masking.
+thresh : applying threshing.
 
-def skinmask(img):
-    hsvim = cv.cvtColor(img, cv.COLOR_BGR2HSV)
-    lower = np.array([0, 48, 80], dtype = "uint8")
-    upper = np.array([20, 255, 255], dtype = "uint8")
-    skinRegionHSV = cv.inRange(hsvim, lower, upper)
-    blurred = cv.blur(skinRegionHSV, (2,2))
-    ret, thresh = cv.threshold(blurred,0,255,cv.THRESH_BINARY)
-    return thresh
+hsvim = cv.cvtColor(img, cv.COLOR_BGR2HSV)
+lower = np.array([0, 48, 80], dtype = "uint8")
+upper = np.array([20, 255, 255], dtype = "uint8")
+skinRegionHSV = cv.inRange(hsvim, lower, upper)
+blurred = cv.blur(skinRegionHSV, (2,2))
+ret,thresh = cv.threshold(blurred,0,255,cv.THRESH_BINARY)
+cv.imshow("thresh", thresh)
 
-def getcnthull(mask_img):
-    contours, hierarchy = cv.findContours(mask_img, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
-    contours = max(contours, key=lambda x: cv.contourArea(x))
-    hull = cv.convexHull(contours)
-    return contours, hull
+#### Contours
+contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+contours = max(contours, key=lambda x: cv.contourArea(x))
+cv.drawContours(img, [contours], -1, (255,255,0), 2)
+cv.imshow("contours", img
 
-def getdefects(contours):
-    hull = cv.convexHull(contours, returnPoints=False)
-    defects = cv.convexityDefects(contours, hull)
-    return defects
+#### Convex Hull
+hull = cv.convexHull(contours)
+cv.drawContours(img, [hull], -1, (0, 255, 255), 2)
+cv.imshow("hull", img)
+#### Convexity Defects
+Any deviation of the object from this hull can be considered as convexity defect.
+hull = cv.convexHull(contours, returnPoints=False)
+defects = cv.convexityDefects(contours, hull)
+#### Cosine Theorem
+
+![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122270906-70886700-cefc-11eb-81e7-550ddfd7aef4.png)
+![Screenshot (340)](https://user-images.githubusercontent.com/77377586/122270924-78480b80-cefc-11eb-9e11-b6d0efd2d7bb.png)
 
 
-def handDetection(img):
-    handResult = {}
-    try:
-        mask_img = skinmask(img)
-        contours, hull = getcnthull(mask_img)
-        #cv.drawContours(img, [contours], -1, (255,255,0), 2)
-        #cv.drawContours(img, [hull], -1, (0, 255, 255), 2)
-        defects = getdefects(contours)
-        if defects is not None:
-            cnt = 0
-            for i in range(defects.shape[0]):  # calculate the angle
-                s, e, f, d = defects[i][0]
-                start = tuple(contours[s][0])
-                end = tuple(contours[e][0])
-                far = tuple(contours[f][0])
-                a = np.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
-                b = np.sqrt((far[0] - start[0]) ** 2 + (far[1] - start[1]) ** 2)
-                c = np.sqrt((end[0] - far[0]) ** 2 + (end[1] - far[1]) ** 2)
-                angle = np.arccos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c))  #      cosine theorem
-                if angle <= np.pi / 2:  # angle less than 90 degree, treat as fingers
-                    cnt += 1
-            cv.putText(img, str(cnt), (0, 50), cv.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0) , 2, cv.LINE_AA)
-            if cnt >= 7:
-                handResult['handDetected'] = True
-                cv.putText(img, "HAND DETECTED", (50, 100), cv.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0) , 2, cv.LINE_AA)
-            else:
-                handResult['handDetected'] = False
-        return handResult    
-    except:
-        pass
+a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can say: If gamma is less than 90 degree or pi/2 we consider it as a finger.
 
-'''
+![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122271387-f99f9e00-cefc-11eb-8a26-4567e4d6bbbd.png)
+![Screenshot (342)](https://user-images.githubusercontent.com/77377586/122271419-03290600-cefd-11eb-97ad-2a93e816e931.png)
+
+
+
+
+
+
 
 
 
