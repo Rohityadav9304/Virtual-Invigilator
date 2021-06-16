@@ -184,6 +184,14 @@ this is our final decision taker.
 ![Screenshot (227)](https://user-images.githubusercontent.com/77377586/122285297-29a26d80-cf0c-11eb-8b2a-97d1637d5c87.png)
 
 
+### Code :
+
+![Screenshot (354)](https://user-images.githubusercontent.com/77377586/122286761-d4675b80-cf0d-11eb-8aaf-68f0228b793c.png)
+![Screenshot (355)](https://user-images.githubusercontent.com/77377586/122286780-d92c0f80-cf0d-11eb-87fb-a9a9ca026a62.png)
+![Screenshot (356)](https://user-images.githubusercontent.com/77377586/122286794-dd582d00-cf0d-11eb-90f9-e0bf99c96678.png)
+
+
+
 
 
 
