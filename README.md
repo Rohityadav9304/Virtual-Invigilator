@@ -191,6 +191,34 @@ this is our final decision taker.
 ![Screenshot (356)](https://user-images.githubusercontent.com/77377586/122286794-dd582d00-cf0d-11eb-90f9-e0bf99c96678.png)
 
 
+# Technologies used (technical details) :
+
+# 1 openCV :
+OpenCV is a huge open-source library for computer vision, machine learning, and image processing. OpenCV supports a wide variety of programming languages like Python, C++, Java, etc. It can process images and videos to identify objects, faces, or even the handwriting of a human. When it is integrated with various libraries, such as Numpy which is a highly optimized library for numerical operations, then the number of weapons increases in your Arsenal i.e whatever operations one can do in Numpy can be combined with OpenCV.
+openCV is the most important library that has been used .
+this is used to process :
+live video processing
+displaying text on screen 
+In hand detection 
+# 2 Machine learning :
+Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.
+we used machine learning to train and test our model
+# 3 Numpy :
+NumPy is the fundamental package for scientific computing in Python. ... NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data. Typically, such operations are executed more efficiently and with less code than is possible using Python's built-in sequences.
+# 4 Deep learning :
+Deep learning is a sub-branch of AI and ML that follow the workings of the human brain for processing the datasets and making efficient decision making. ... Practical examples of deep learning are Virtual assistants, vision for driverless cars, money laundering, face recognition and many more
+We used deep learning in our project to train neural networks
+# 5 Tensorflow Lite :
+TensorFlow Lite is an open-source deep learning framework to run TensorFlow models on-device.
+it has been used for object detection and image classification
+# Keras :
+Keras is an open-source software library that provides a Python interface for artificial neural networks. Keras acts as an interface for the TensorFlow library. 
+
+
+
+
+
+
 
 
 
