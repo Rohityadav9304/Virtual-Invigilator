@@ -38,14 +38,13 @@ OpenCv plays main role in hand detection
 ### Importing Libraries
 ### Reading Image
 ### SkinMask
-
 It is used for highlighting specific color on image.
-hsvim : Change BGR (blue, green, red) image to HSV (hue, saturation, value).
-lower : lower range of skin color in HSV.
-upper : upper range of skin color in HSV.
-skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
-blurred: bluring image to improve masking.
-thresh : applying threshing.
+1. hsvim : Change BGR (blue, green, red) image to HSV (hue, saturation, value).
+2. lower : lower range of skin color in HSV.
+3. upper : upper range of skin color in HSV.
+4. skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
+5. blurred: bluring image to improve masking.
+6. thresh : applying threshing.
 ### Contours 
 Outline 
 ### Convex Hull
