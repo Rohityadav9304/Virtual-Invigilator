@@ -33,11 +33,11 @@ and the text will be shown on screen i.e Warning !! Hand acivity deteced
 
 ![Screenshot 6_14_2021 7_56_22 PM](https://user-images.githubusercontent.com/77377586/122266084-0b7e4280-cef7-11eb-8042-021d21509e90.png)
 
-### Techincal part of hand detection
+## Techincal part of hand detection
 OpenCv plays main role in hand detection 
-#### Importing Libraries
-#### Reading Image
-#### SkinMask
+### Importing Libraries
+### Reading Image
+### SkinMask
 
 It is used for highlighting specific color on image.
 hsvim : Change BGR (blue, green, red) image to HSV (hue, saturation, value).
@@ -46,12 +46,12 @@ upper : upper range of skin color in HSV.
 skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
 blurred: bluring image to improve masking.
 thresh : applying threshing.
-#### Contours 
+### Contours 
 Outline 
-#### Convex Hull
-#### Convexity Defects
+### Convex Hull
+### Convexity Defects
 Any deviation of the object from this hull can be considered as convexity defect.
-#### Cosine Theorem
+### Cosine Theorem
 
 ![Screenshot (339)](https://user-images.githubusercontent.com/77377586/122288810-a08d3580-cf0f-11eb-8572-f68243cb63f8.png)
 
@@ -59,11 +59,11 @@ Any deviation of the object from this hull can be considered as convexity defect
 
 
 a,b,c and angle: gamma. Now this gamma is always less than 90 degree, So we can say: If gamma is less than 90 degree or pi/2 we consider it as a finger.
-#### Counting fingers
+### Counting fingers
 
 ![Screenshot (341)](https://user-images.githubusercontent.com/77377586/122288433-750a4b00-cf0f-11eb-913e-41adb719f8fe.png)
 
-#### Code 
+### Code 
 ![Screenshot (345)](https://user-images.githubusercontent.com/77377586/122272206-ee993d80-cefd-11eb-99c7-6dd5328a7955.png)
 ![Screenshot (346)](https://user-images.githubusercontent.com/77377586/122272232-f822a580-cefd-11eb-802a-d7c9b923e1d0.png)
 
@@ -80,15 +80,15 @@ And a text will be shown on screen i.e Warning !!! Mobile detetected
 
 ![Screenshot 6_14_2021 7_56_38 PM](https://user-images.githubusercontent.com/77377586/122273406-0b824080-ceff-11eb-8829-2b99e0d122ec.png)
 ### techincal details 
-#### dataset :
+### dataset :
 A pre trained dataset has been used that has 80 clasess of object detection 
 name of the dataset is COCO-dataset 
 we don't need to train and test the data for object detection we just need to call the mobile detection function and if the mobile is shown in screen than it will be automatically detected 
 
-#### tensorflow
+### tensorflow
 It is an open source artificial intelligence library, using data flow graphs to build models. It allows developers to create large-scale neural networks with many layers.
 TensorFlow is mainly used for: Classification, Perception, Understanding, Discovering, Prediction and Creation.
-#### CNN
+### CNN
 CNNs are used for image classification and recognition because of its high accuracy. ... The CNN follows a hierarchical model which works on building a network, like a funnel,
 and finally gives out a fully-connected layer where all the neurons are connected to each other and the output is processed
 ### Code
@@ -100,7 +100,7 @@ and finally gives out a fully-connected layer where all the neurons are connecte
 Using head pose estimation we can identify that the studenyt's face is detecting or not in camera 
 if the face is not detected then there will be shown a warning on the screen
 this is done by the help of Dlib library by the help of shape predictor_68_facial_landmarks file 
-#### shape predictor_68_facial_landmarks 
+### shape predictor_68_facial_landmarks 
 this file contains 68 facial landmarks that conains face co-ordinaes and head co-ordinates
 n computer vision, the pose of an object refers to its relative orientation and position relative to the camera.
 
