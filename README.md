@@ -4,12 +4,12 @@ this project is based on cheating detection
 This project detects cheating in examination using hardware (camera, computer system, sound system) and software (machine learning and deep learning).
 When system observes cheating activity then a buzzer will play or photo of suspect will be sent to email address of teachers. 
 ## The model contains following steps in detecting cheating
-Hand detection 
-Mobile detection
-Head pose estimation
-Multiple person detection
-Email Sending
-Decision
+1. Hand detection 
+2. Mobile detection
+3. Head pose estimation
+4. Multiple person detection
+5. Email Sending
+6. Decision
 # Flow digram :
 
 ![flow digram](https://user-images.githubusercontent.com/77377586/122285700-acc3c380-cf0c-11eb-9c23-64a231acefdc.png)
@@ -20,7 +20,8 @@ Decision
 
 
 ## Hand detection.
-Suppose a student is giving sign to another student using his hand which can help another student in cheating so to detect this type of activity we trained a model that can detect hand activity 
+Suppose a student is giving sign to another student using his hand which can help another student in cheating so to detect this type of activity we trained a model that can
+detect hand activity 
 Hand detection Checks the gesture of the student’s hand ,and if any cheating activity is found then it gives Hand detection output TRUE.
 And if any cheating activity is no detected then it give output FALSE.
 The hand detection is done by openCV library 
@@ -45,7 +46,8 @@ upper : upper range of skin color in HSV.
 skinRegionHSV : Detect skin on the range of lower and upper pixel values in the HSV colorspace.
 blurred: bluring image to improve masking.
 thresh : applying threshing.
-#### Contours
+#### Contours 
+Outline 
 #### Convex Hull
 #### Convexity Defects
 Any deviation of the object from this hull can be considered as convexity defect.
@@ -84,9 +86,11 @@ name of the dataset is COCO-dataset
 we don't need to train and test the data for object detection we just need to call the mobile detection function and if the mobile is shown in screen than it will be automatically detected 
 
 #### tensorflow
-It is an open source artificial intelligence library, using data flow graphs to build models. It allows developers to create large-scale neural networks with many layers. TensorFlow is mainly used for: Classification, Perception, Understanding, Discovering, Prediction and Creation.
+It is an open source artificial intelligence library, using data flow graphs to build models. It allows developers to create large-scale neural networks with many layers.
+TensorFlow is mainly used for: Classification, Perception, Understanding, Discovering, Prediction and Creation.
 #### CNN
-CNNs are used for image classification and recognition because of its high accuracy. ... The CNN follows a hierarchical model which works on building a network, like a funnel, and finally gives out a fully-connected layer where all the neurons are connected to each other and the output is processed
+CNNs are used for image classification and recognition because of its high accuracy. ... The CNN follows a hierarchical model which works on building a network, like a funnel,
+and finally gives out a fully-connected layer where all the neurons are connected to each other and the output is processed
 ### Code
 ![Screenshot (351)](https://user-images.githubusercontent.com/77377586/122279619-e04f1f80-cf05-11eb-9b0e-a854f8bf062e.png)
 ![Screenshot (352)](https://user-images.githubusercontent.com/77377586/122279633-e513d380-cf05-11eb-8535-86659a8ef533.png)
